@@ -1,0 +1,56 @@
+{
+    "name": "fhusquinet/laravel-campaign-activity-tracker",
+    "description": ":package_description",
+    "keywords": [
+        "fhusquinet",
+        "laravel-campaign-activity-tracker"
+    ],
+    "homepage": "https://github.com/fhusquinet/laravel-campaign-activity-tracker",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Florian Husquinet",
+            "email": "florian.husquinet@deegital.be",
+            "homepage": "https://www.deegital.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.0",
+        "illuminate/config": "~5.5.0|~5.6.0",
+        "illuminate/database": "~5.5.0|~5.6.0",
+        "illuminate/support": "~5.5.0|~5.6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.5.0|~3.6.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FHusquinet\\CampaignActivityTracker\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FHusquinet\\CampaignActivityTracker\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FHusquinet\\CampaignActivityTracker\\CampaignActivityTrackerServiceProvider"
+            ]
+        }
+    }
+}
