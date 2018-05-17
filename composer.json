@@ -1,6 +1,6 @@
 {
     "name": "fhusquinet/laravel-campaign-activity-tracker",
-    "description": ":package_description",
+    "description": "Track the activity of your campaigns on your Laravel application",
     "keywords": [
         "fhusquinet",
         "laravel-campaign-activity-tracker"
