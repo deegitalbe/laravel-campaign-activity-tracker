@@ -1,4 +1,4 @@
-# Very short description of the package
+# Track the activity of your campaigns on your Laravel application
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/fhusquinet/laravel-campaign-activity-tracker.svg?style=flat-square)](https://packagist.org/packages/fhusquinet/laravel-campaign-activity-tracker)
 [![Total Downloads](https://img.shields.io/packagist/dt/fhusquinet/laravel-campaign-activity-tracker.svg?style=flat-square)](https://packagist.org/packages/fhusquinet/laravel-campaign-activity-tracker)
