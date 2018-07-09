@@ -11,7 +11,7 @@ trait TracksCampaignActivity
     
     protected static function bootTracksCampaignActivity()
     {
-        static::eventsToBeRecorded()->each(function ($eventName) {
+        static::eventsTracked()->each(function ($eventName) {
             return static::$eventName(function ($model) use ($eventName) {
                 if (! $model->campaignActivityTrackingEnabled()) {
                     return;
@@ -37,7 +37,7 @@ trait TracksCampaignActivity
     /*
      * Get the event names that should be recorded.
      */
-    protected static function eventsToBeRecorded()
+    protected static function eventsTracked()
     {
         if ( isset(static::$campaignTrackingEvents) ) {
             return collect(static::$campaignTrackingEvents);
