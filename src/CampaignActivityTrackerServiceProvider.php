@@ -16,13 +16,12 @@ class CampaignActivityTrackerServiceProvider extends ServiceProvider
                 __DIR__.'/../config/campaign-activity-tracker.php' => config_path('campaign-activity-tracker.php'),
             ], 'config');
 
-            /*
-            $this->loadViewsFrom(__DIR__.'/../resources/views', 'campaign-activity-tracker');
-
-            $this->publishes([
-                __DIR__.'/../resources/views' => base_path('resources/views/vendor/campaign-activity-tracker'),
-            ], 'views');
-            */
+            if (! class_exists('CreateCampaignActivitiesTable')) {
+                $timestamp = date('Y_m_d_His', time());
+                $this->publishes([
+                    __DIR__.'/../migrations/create_campaign_activities_table.php.stub' => database_path("/migrations/{$timestamp}_create_campaign_activities_table.php"),
+                ], 'migrations');
+            }
         }
     }
 
@@ -31,6 +30,6 @@ class CampaignActivityTrackerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'campaign-activity-tracker');
+        $this->mergeConfigFrom(__DIR__.'/../config/campaign-activity-tracker.php', 'campaign-activity-tracker');
     }
 }
