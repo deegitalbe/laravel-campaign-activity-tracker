@@ -16,11 +16,11 @@ class TrackCampaigns
     public function handle($request, Closure $next)
     {
         $parameters = config('campaign-activity-tracker.parameters');
-        $data = [];
+        $data = ['parameters' => []];
 
         foreach ( $parameters as $parameter ) {
             if ( isset( $request->{$parameter} ) ) {
-                $data[$parameter] = $request->{$parameter};
+                $data['parameters'][$parameter] = $request->{$parameter};
             }
         }
             

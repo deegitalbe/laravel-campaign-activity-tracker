@@ -26,7 +26,7 @@ class TrackCampaignsMiddlewareTest extends TestCase
         $middleware = new TrackCampaigns();
         $middleware->handle($request, function () {});
 
-        $expectedData = $data['parameters'];
+        $expectedData['parameters'] = $data['parameters'];
         $expectedData['url'] = 'http://localhost';
         $expectedData['visited_at'] = now();
 
@@ -48,7 +48,7 @@ class TrackCampaignsMiddlewareTest extends TestCase
         $middleware = new TrackCampaigns();
         $middleware->handle($request, function () {});
 
-        $expectedData2 = $data2['parameters'];
+        $expectedData2['parameters'] = $data2['parameters'];
         $expectedData2['url'] = 'http://localhost';
         $expectedData2['visited_at'] = now();
 
