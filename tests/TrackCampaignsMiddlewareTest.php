@@ -57,4 +57,21 @@ class TrackCampaignsMiddlewareTest extends TestCase
         $this->assertEquals($data1['parameters'], $campaigns[0]);
         $this->assertEquals($expectedData2, $campaigns[1]);
     }
+
+    /** @test */
+    public function visiting_an_url_with_not_utm_get_parameters_will_not_store_them_in_session()
+    {
+        Carbon::setTestNow(now());
+
+        session()->put('campaign_activities');
+
+        $request = Request::create('/', 'GET');
+        
+        $middleware = new TrackCampaigns();
+        $middleware->handle($request, function () {});
+
+        $this->assertFalse(
+            session()->has('campaign_activities')
+        );
+    }
 }

@@ -24,7 +24,7 @@ class TrackCampaigns
             }
         }
             
-        if ( ! empty($data) ) {
+        if ( ! empty($data) && ! empty($data['parameters']) ) {
             $data['url'] = $request->url();
             $data['visited_at'] = now();
 
